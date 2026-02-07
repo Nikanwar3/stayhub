@@ -167,7 +167,6 @@ stayhub/
 heroku config:set CLOUD_NAME=your_cloud_name
 heroku config:set CLOUD_API_KEY=your_api_key
 heroku config:set CLOUD_API_SECRET=your_api_secret
-heroku config:set MAP_TOKEN=your_map_token
 heroku config:set SECRET=your_secret
 
 ## 🤝 Contributing
