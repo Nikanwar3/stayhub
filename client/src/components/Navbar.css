@@ -1,0 +1,145 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ff385c;
+  letter-spacing: -0.5px;
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.03);
+}
+
+.navbar-brand i {
+  font-size: 1.3rem;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 10px 16px;
+  border-radius: 24px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background: #f7f7f7;
+  color: #ff385c;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 8px;
+  padding: 6px 6px 6px 16px;
+  border-radius: 24px;
+  border: 1px solid #ddd;
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+}
+
+.nav-user:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-greeting {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.btn-logout {
+  background: none;
+  border: none;
+  color: #717171;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  background: #f7f7f7;
+  color: #ff385c;
+}
+
+.btn-signup-nav {
+  text-decoration: none;
+  background: linear-gradient(135deg, #ff385c, #e31c5f);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 22px;
+  border-radius: 24px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(255, 56, 92, 0.25);
+}
+
+.btn-signup-nav:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(255, 56, 92, 0.35);
+  background: linear-gradient(135deg, #e31c5f, #c81852);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .navbar-container {
+    height: 60px;
+  }
+
+  .nav-greeting {
+    display: none;
+  }
+
+  .navbar-links {
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}

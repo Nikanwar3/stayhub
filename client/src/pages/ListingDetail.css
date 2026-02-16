@@ -1,0 +1,492 @@
+.detail-page {
+    min-height: 100vh;
+    background: #fff;
+}
+
+.detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header */
+.detail-header {
+    margin-bottom: 1.5rem;
+}
+
+.detail-header h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #222;
+    margin: 0 0 8px;
+    letter-spacing: -0.5px;
+}
+
+.detail-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.detail-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #717171;
+    font-size: 0.95rem;
+}
+
+.detail-location i {
+    color: #ff385c;
+}
+
+.detail-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.detail-rating i {
+    color: #ff385c;
+}
+
+/* Image */
+.detail-image-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    max-height: 480px;
+}
+
+.detail-image {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+/* Grid Layout */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 3rem;
+}
+
+/* Host */
+.detail-host {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 1.5rem 0;
+}
+
+.host-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff385c, #e31c5f);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.detail-host h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.detail-host p {
+    margin: 2px 0 0;
+    color: #717171;
+    font-size: 0.9rem;
+}
+
+.detail-divider {
+    border: none;
+    border-top: 1px solid #ebebeb;
+    margin: 0;
+}
+
+/* Description */
+.detail-description {
+    padding: 1.5rem 0;
+}
+
+.detail-description h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 0.8rem;
+    color: #222;
+}
+
+.detail-description p {
+    color: #484848;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Owner Actions */
+.owner-actions {
+    display: flex;
+    gap: 12px;
+    padding: 1.5rem 0;
+}
+
+.btn-edit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-edit:hover {
+    background: #444;
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #fff;
+    color: #ff385c;
+    border: 2px solid #ff385c;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+    background: #ff385c;
+    color: #fff;
+}
+
+/* Price Card */
+.price-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: sticky;
+    top: 90px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+}
+
+.price-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.price-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #222;
+}
+
+.price-unit {
+    font-size: 1rem;
+    color: #717171;
+}
+
+/* Map Card */
+.map-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.map-card h4 {
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.map-card h4 i {
+    color: #ff385c;
+}
+
+.map-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+}
+
+.map-address {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #717171;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.map-address i {
+    color: #ff385c;
+    font-size: 0.8rem;
+}
+
+/* Reviews */
+.reviews-section {
+    padding: 2rem 0;
+}
+
+.reviews-section h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reviews-section h3 i {
+    color: #ff385c;
+}
+
+.review-form {
+    background: #f7f7f7;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.rating-input {
+    margin-bottom: 1rem;
+}
+
+.rating-input label {
+    display: block;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.star-input {
+    display: flex;
+    gap: 4px;
+}
+
+.star-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ddd;
+    transition: all 0.15s ease;
+    padding: 2px;
+}
+
+.star-btn.active {
+    color: #ffb400;
+    transform: scale(1.1);
+}
+
+.star-btn:hover {
+    transform: scale(1.2);
+}
+
+.review-form textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    resize: vertical;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.review-form textarea:focus {
+    outline: none;
+    border-color: #222;
+}
+
+.btn-submit-review {
+    background: linear-gradient(135deg, #ff385c, #e31c5f);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-submit-review:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(255, 56, 92, 0.3);
+}
+
+.btn-submit-review:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.login-prompt {
+    color: #717171;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.login-prompt a {
+    color: #ff385c;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* Reviews List */
+.reviews-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.review-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.review-header h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.review-stars {
+    display: flex;
+    gap: 2px;
+    margin-top: 2px;
+}
+
+.review-stars i {
+    font-size: 0.7rem;
+    color: #ddd;
+}
+
+.review-stars i.filled {
+    color: #ffb400;
+}
+
+.review-comment {
+    color: #484848;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0 0 12px;
+}
+
+.btn-delete-review {
+    background: none;
+    border: none;
+    color: #ff385c;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: opacity 0.2s;
+}
+
+.btn-delete-review:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 960px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .price-card {
+        position: static;
+    }
+
+    .detail-image {
+        height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-container {
+        padding: 1rem;
+    }
+
+    .detail-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .detail-image {
+        height: 260px;
+    }
+
+    .reviews-list {
+        grid-template-columns: 1fr;
+    }
+}

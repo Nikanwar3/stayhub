@@ -1,200 +1,126 @@
-# 🏠 StayHub - Holiday Rentals Platform
+# StayHub — Full-Stack Holiday Rentals Platform
 
-StayHub is a full-stack web application for booking vacation accommodations including houses, villas, and farmhouses. Users can browse properties, add their own listings, leave reviews, and view property locations on interactive maps.
+A modern full-stack vacation rental platform built with **React**, **Node.js**, **Express**, and **MongoDB**. Browse listings, leave reviews, and explore locations on interactive maps.
+
+![StayHub](https://img.shields.io/badge/React-18-blue) ![Node.js](https://img.shields.io/badge/Node.js-Express-green) ![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-brightgreen) ![JWT](https://img.shields.io/badge/Auth-JWT-orange)
 
 ## ✨ Features
 
-- 🏡 **Property Listings**: Browse and search vacation properties
-- 📝 **User Listings**: Add, edit, and delete your own properties
-- ⭐ **Reviews & Ratings**: Rate and review properties
-- 🗺️ **Interactive Maps**: View property locations using Mapbox
-- 🔐 **Authentication**: Secure login/signup with Passport.js
-- ☁️ **Image Storage**: Cloudinary integration for image hosting
-- 📱 **Responsive Design**: Mobile-friendly interface
+- **React SPA Frontend** with React Router for seamless navigation
+- **JWT Authentication** with secure HTTP-only cookies
+- **CRUD Operations** for property listings with image uploads
+- **Review System** with star ratings and user-specific delete
+- **Interactive Maps** using Leaflet.js with OpenStreetMap geocoding
+- **Image Uploads** via Cloudinary with Multer middleware
+- **Server-side Validation** using Joi schemas
+- **Authorization** — only listing owners can edit/delete their properties
+- **Responsive Design** — works on mobile, tablet, and desktop
+- **Search & Filter** — find listings by name, city, or country
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- HTML5, CSS3, JavaScript
-- Bootstrap 5
-- EJS (Embedded JavaScript templates)
-- Mapbox GL JS
+- **React** with Vite
+- **React Router** for client-side routing
+- **Axios** for API communication
+- **React-Leaflet** for interactive maps
+- **Context API** for state management
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- Passport.js (Authentication)
-
-### Key Packages
-- `multer` - File uploads
-- `cloudinary` - Image hosting
-- `joi` - Data validation
-- `express-session` - Session management
-- `connect-flash` - Flash messages
-
-## 📋 Prerequisites
-
-Before you begin, ensure you have the following installed:
-- Node.js (v14 or higher)
-- MongoDB (local)
-- npm 
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/Nikanwar3/stayhub
-cd stayhub
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Environment Variables
-
-Create a `.env` file in the root directory and add the following:
-
-```env
-# Cloudinary Configuration
-CLOUD_NAME=your_cloudinary_cloud_name
-CLOUD_API_KEY=your_cloudinary_api_key
-CLOUD_API_SECRET=your_cloudinary_api_secret
-
-# MongoDB
-ATLASDB_URL=your_mongodb_atlas_connection_string
-
-# Session Secret
-SECRET=your_secret_session_key
-
-### 4. Get API Keys
-
-#### Cloudinary (Image Hosting)
-1. Sign up at [Cloudinary](https://cloudinary.com/)
-2. Get your Cloud Name, API Key, and API Secret from the dashboard
-
-#### MongoDB Atlas
-1. Sign up at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-2. Create a cluster and get your connection string
-
-### 5. Initialize Database (Optional)
-
-To populate the database with sample listings:
-
-```bash
-node init/index.js
-```
-
-**Note**: Update the `owner` field in `init/index.js` with a valid user ID after creating your first user.
-
-### 6. Run the Application
-
-```bash
-# Development mode (with nodemon)
-npm run dev
-
-# Production mode
-npm start
-```
-
-The application will run on `http://localhost:8080`
+- **Node.js** + **Express** RESTful API
+- **MongoDB** + **Mongoose** for data persistence
+- **JWT** (JSON Web Tokens) for authentication
+- **Joi** for server-side validation
+- **Multer** + **Cloudinary** for image uploads
+- **bcrypt.js** for password hashing
 
 ## 📁 Project Structure
 
 ```
 stayhub/
-├── controllers/        # Route controllers
-│   ├── listings.js
-│   ├── reviews.js
-│   └── users.js
-├── models/            # Database models
-│   ├── listing.js
-│   ├── review.js
-│   └── user.js
-├── routes/            # Express routes
-│   ├── listing.js
-│   ├── review.js
-│   └── user.js
-├── views/             # EJS templates
-│   ├── layouts/
-│   ├── includes/
-│   ├── listings/
-│   └── users/
-├── public/            # Static files
-│   ├── css/
-│   └── js/
-├── init/              # Database initialization
-│   ├── data.js
-│   └── index.js
-├── utils/             # Utility functions
-│   ├── ExpressError.js
-│   └── wrapAsync.js
-├── app.js             # Main application file
-├── cloudConfig.js     # Cloudinary configuration
-├── middlewares.js     # Custom middlewares
-├── schemaValidation.js # Joi validation schemas
-└── package.json
+├── client/                 # React frontend (Vite)
+│   ├── src/
+│   │   ├── api/            # API service layer (Axios)
+│   │   ├── components/     # Reusable components
+│   │   ├── context/        # React Context (Auth)
+│   │   ├── pages/          # Page components
+│   │   ├── App.jsx         # Main app with routing
+│   │   └── App.css         # Global styles
+│   └── index.html
+├── server/                 # Express API backend
+│   ├── controllers/        # Route handlers
+│   ├── models/             # Mongoose schemas
+│   ├── routes/             # Express routes
+│   ├── middlewares.js       # Auth & validation middleware
+│   ├── cloudConfig.js      # Cloudinary configuration
+│   ├── schemaValidation.js # Joi validation schemas
+│   └── app.js              # Server entry point
+└── package.json            # Root scripts
 ```
 
-## 🔑 Key Features Implementation
+## 🚀 Quick Start
 
-### Authentication
-- Local authentication using Passport.js
-- Password hashing with passport-local-mongoose
-- Session-based authentication
+### Prerequisites
+- Node.js (v18+)
+- MongoDB (local or Atlas)
+- Cloudinary account
 
-### Authorization
-- Owner-based access control
-- Protected routes for authenticated users
-- Review author verification
+### 1. Clone & Install
 
-### Image Upload
-- Multer for handling multipart form data
-- Cloudinary for cloud storage
-- Image transformation and optimization
+```bash
+git clone https://github.com/Nikanwar3/stayhub.git
+cd stayhub
+npm run install:all
+```
 
-### Validation
-- Server-side validation with Joi
-- Client-side validation with Bootstrap
-- Error handling middleware
+### 2. Environment Variables
 
+Create `server/.env`:
 
-# Set environment variables
-heroku config:set CLOUD_NAME=your_cloud_name
-heroku config:set CLOUD_API_KEY=your_api_key
-heroku config:set CLOUD_API_SECRET=your_api_secret
-heroku config:set MAP_TOKEN=your_map_token
-heroku config:set SECRET=your_secret
+```
+CLOUD_NAME=your_cloudinary_name
+CLOUD_API_KEY=your_api_key
+CLOUD_API_SECRET=your_api_secret
+ATLASDB_URL=mongodb://127.0.0.1:27017/stayhub
+JWT_SECRET=your_jwt_secret_key
+CLIENT_URL=http://localhost:5173
+```
 
-## 🤝 Contributing
+### 3. Run Development
 
-Contributions are welcome! Please follow these steps:
+```bash
+npm run dev
+```
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+This starts both:
+- **Server**: http://localhost:8080
+- **Client**: http://localhost:5173
+
+## 📡 API Endpoints
+
+### Auth
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/signup` | Register new user |
+| POST | `/api/auth/login` | Login user |
+| POST | `/api/auth/logout` | Logout user |
+| GET | `/api/auth/me` | Get current user |
+
+### Listings
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/listings` | Get all listings |
+| GET | `/api/listings/:id` | Get single listing |
+| POST | `/api/listings` | Create listing (auth) |
+| PUT | `/api/listings/:id` | Update listing (owner) |
+| DELETE | `/api/listings/:id` | Delete listing (owner) |
+
+### Reviews
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/listings/:id/reviews` | Add review (auth) |
+| DELETE | `/api/listings/:id/reviews/:reviewId` | Delete review (author) |
 
 ## 📄 License
 
-This project is licensed under the ISC License.
-
-## 👤 Author
-
-Your Name - [Nikanwar3](https://github.com/Nikanwar3)
-
-## 🙏 Acknowledgments
-
-- [Express.js](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Bootstrap](https://getbootstrap.com/)
-- [Cloudinary](https://cloudinary.com/)
-- [Passport.js](http://www.passportjs.org/)
-
-
-Made with ❤️ 
+ISC

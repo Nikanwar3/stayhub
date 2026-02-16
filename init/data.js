@@ -12,8 +12,8 @@ const sampleListings = [
     country: "India",
     geometry: {
       type: "Point",
-      coordinates: [73.8278, 15.4909]
-    }
+      coordinates: [73.8278, 15.4909],
+    },
   },
   {
     title: "Modern Loft in Downtown",
@@ -28,8 +28,8 @@ const sampleListings = [
     country: "India",
     geometry: {
       type: "Point",
-      coordinates: [72.8777, 19.0760]
-    }
+      coordinates: [72.8777, 19.076],
+    },
   },
   {
     title: "Mountain Retreat",
@@ -44,8 +44,8 @@ const sampleListings = [
     country: "India",
     geometry: {
       type: "Point",
-      coordinates: [77.1892, 32.2432]
-    }
+      coordinates: [77.1892, 32.2432],
+    },
   },
   {
     title: "Historic Villa in Rajasthan",
@@ -60,8 +60,8 @@ const sampleListings = [
     country: "India",
     geometry: {
       type: "Point",
-      coordinates: [75.7873, 26.9124]
-    }
+      coordinates: [75.7873, 26.9124],
+    },
   },
   {
     title: "Lakeside Cottage",
@@ -76,8 +76,8 @@ const sampleListings = [
     country: "India",
     geometry: {
       type: "Point",
-      coordinates: [79.4633, 29.3803]
-    }
+      coordinates: [79.4633, 29.3803],
+    },
   },
   {
     title: "Luxury Penthouse with Pool",
@@ -92,8 +92,8 @@ const sampleListings = [
     country: "India",
     geometry: {
       type: "Point",
-      coordinates: [77.5946, 12.9716]
-    }
+      coordinates: [77.5946, 12.9716],
+    },
   },
   {
     title: "Beach House Paradise",
@@ -108,8 +108,8 @@ const sampleListings = [
     country: "India",
     geometry: {
       type: "Point",
-      coordinates: [76.2711, 10.8505]
-    }
+      coordinates: [76.2711, 10.8505],
+    },
   },
   {
     title: "Farmhouse with Garden",
@@ -124,8 +124,89 @@ const sampleListings = [
     country: "India",
     geometry: {
       type: "Point",
-      coordinates: [73.8567, 18.5204]
-    }
+      coordinates: [73.8567, 18.5204],
+    },
+  },
+  // New interesting listings
+  {
+    title: "Luxury Treehouse Stay",
+    description:
+      "Experience nature like never before in this luxury treehouse. Features panoramic forest views and modern amenities.",
+    image: {
+      filename: "listingimage",
+      url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    },
+    price: 4500,
+    location: "Munnar",
+    country: "India",
+    geometry: {
+      type: "Point",
+      coordinates: [77.0595, 10.0889],
+    },
+  },
+  {
+    title: "Traditional Houseboat",
+    description:
+      "Stay on the serene Dal Lake in this handcrafted wooden houseboat. Complete with Kashmiri cuisine and shikara rides.",
+    image: {
+      filename: "listingimage",
+      url: "https://images.unsplash.com/photo-1595846519845-68e298c2edd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    },
+    price: 3200,
+    location: "Srinagar",
+    country: "India",
+    geometry: {
+      type: "Point",
+      coordinates: [74.8715, 34.0935], // Coordinates for Srinagar
+    },
+  },
+  {
+    title: "Desert Glamping Experience",
+    description:
+      "Sleep under the stars in luxury tents. Enjoy camel safaris, folk music, and authentic Rajasthani dinners.",
+    image: {
+      filename: "listingimage",
+      url: "https://plus.unsplash.com/premium_photo-1661964071015-d97428970584?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    },
+    price: 2800,
+    location: "Jaisalmer",
+    country: "India",
+    geometry: {
+      type: "Point",
+      coordinates: [70.9083, 26.9157],
+    },
+  },
+  {
+    title: "Himalayan Stone Cottage",
+    description:
+      "A rustic stone cottage perched on a cliff edge with breathtaking views of the Nanda Devi peaks.",
+    image: {
+      filename: "listingimage",
+      url: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    },
+    price: 2100,
+    location: "Mukteshwar",
+    country: "India",
+    geometry: {
+      type: "Point",
+      coordinates: [79.6473, 29.4770], // Coordinates for Mukteshwar
+    },
+  },
+  {
+    title: "Eco-Friendly Mud House",
+    description:
+      "Sustainable living at its best. This mud house offers natural cooling and a grounding experience in the village.",
+    image: {
+      filename: "listingimage",
+      url: "https://images.unsplash.com/photo-1598928636135-d146006ff4be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    },
+    price: 900,
+    location: "Auroville",
+    country: "India",
+    geometry: {
+      type: "Point",
+      coordinates: [79.8078, 12.0067], // Coordinates for Auroville
+    },
   },
 ];
 
