@@ -33,11 +33,25 @@ module.exports.createListing = async (req, res, next) => {
   newListing.owner = req.user._id;
   newListing.image = { url, filename };
 
-  // Set default coordinates (will not be used since we removed map)
-  newListing.geometry = {
-    type: "Point",
-    coordinates: [0, 0]
-  };
+  // Geocode location using free OpenStreetMap Nominatim API
+  try {
+    const query = `${newListing.location}, ${newListing.country}`;
+    const geoRes = await fetch(
+      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`,
+      { headers: { "User-Agent": "StayHub/1.0" } }
+    );
+    const geoData = await geoRes.json();
+    if (geoData.length > 0) {
+      newListing.geometry = {
+        type: "Point",
+        coordinates: [parseFloat(geoData[0].lon), parseFloat(geoData[0].lat)],
+      };
+    } else {
+      newListing.geometry = { type: "Point", coordinates: [0, 0] };
+    }
+  } catch (err) {
+    newListing.geometry = { type: "Point", coordinates: [0, 0] };
+  }
 
   await newListing.save();
   req.flash("success", "New Listing Created!");
@@ -65,9 +79,27 @@ module.exports.updateListing = async (req, res) => {
     let url = req.file.path;
     let filename = req.file.filename;
     listing.image = { url, filename };
-    await listing.save();
   }
 
+  // Re-geocode if location was updated
+  try {
+    const query = `${req.body.listing.location}, ${req.body.listing.country}`;
+    const geoRes = await fetch(
+      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`,
+      { headers: { "User-Agent": "StayHub/1.0" } }
+    );
+    const geoData = await geoRes.json();
+    if (geoData.length > 0) {
+      listing.geometry = {
+        type: "Point",
+        coordinates: [parseFloat(geoData[0].lon), parseFloat(geoData[0].lat)],
+      };
+    }
+  } catch (err) {
+    console.log("Geocoding failed:", err.message);
+  }
+
+  await listing.save();
   req.flash("success", "Listing Updated!");
   res.redirect(`/listings/${id}`);
 };
